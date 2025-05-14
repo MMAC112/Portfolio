@@ -1,0 +1,476 @@
+/* global css */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'helvetica neue', serif;
+    margin: 0;
+}
+
+
+/* typography CSS */
+
+h1, h2, h3, h4, h5, h6, blockquote, p{
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: clamp(24px, 3.5vw, 72px);
+  }
+  
+  h2 {
+    font-size: clamp(16px, 3vw, 32px);
+  }
+  
+  h3 {
+    font-size: clamp(14px, 1.8vw, 30px);
+  }
+  
+  /* h4 {
+    font-size: clamp(10px, 2vw, 28px);
+  }
+  
+  h5 {
+    font-size: clamp(10px, 1.8vw, 24px);
+  }
+  
+  h6 {
+    font-size: clamp(10px, 1.6vw, 20px);
+  } */
+  
+  blockquote {
+    font-size: clamp(24px, 3.5vw, 48px);
+    font-weight: 600;
+    margin-bottom: clamp(24px, 3.5vw, 48px);
+  }
+  
+  p {
+    font-size: clamp(16px, 2vw, 24px);
+    line-height: 1.45;
+    text-rendering: optimizeLegibility;
+  }
+
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+  
+
+/* navigation links css */
+
+a {
+    font-size: clamp(16px, 2vw, 18px);
+  }
+
+
+a, a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover, a:active{
+    color: violet;
+}
+
+nav a.active{
+    color: violet;
+    border-bottom: 1px solid black;
+}
+
+
+/* structural CSS */
+
+
+header, footer{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 16px 0;
+    /* background-color: aquamarine; */
+}
+
+nav{
+    display: flex;
+    gap: clamp(8px, 2vw, 48px);
+}
+
+section{
+    padding: clamp(48px, 7vw, 256px) 0;
+    /* background-color: rebeccapurple; */
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    /* background-color: blueviolet; */
+}
+
+.full-width{
+    width: 100%;
+}
+
+.max-90{
+    max-width: 90%;
+}
+
+.max-720{
+    max-width: 720px;
+}
+
+.no-padding{
+    padding:0;
+}
+
+.flex{
+    display: flex;
+    gap:16px;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.flex-reverse{
+    flex-direction: row-reverse;
+}
+
+.flex-50{
+    flex: 1 1 calc(50% - 16px);
+}
+
+.flex-30{
+    flex: 1 1 calc(30% - 16px);
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space-around{
+        justify-content: space-around;
+}
+
+.center{
+    margin: 0 auto;
+}
+
+
+/* image CSS */
+
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.logo{
+    width: clamp(40px, 6vw, 128px);
+    /* height:164px; */
+}
+
+
+/* home page CSS */
+
+.usp{
+    width: 70%;
+    font-weight: 300;
+}
+
+.project-gallery{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(32px, 5vw, 96px) clamp(8px, 2vw, 48px);
+}
+
+.project-card{
+    flex: 1 1 calc(50% - clamp(8px, 2vw, 48px));
+}
+
+.project-card > a{
+    aspect-ratio: 4 / 3;
+    display: block;
+    overflow: hidden;
+}
+
+.project-card > a > img{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+.project-card > a:hover img{
+    transform: scale(1.15);
+}
+
+.project-card > h2 {
+    margin: 8px 0 2px 0;
+}
+
+
+
+/* project page CSS*/
+
+.text-box{
+    width: clamp(100px, 37vw, 650px);
+}
+
+.pagination{
+    width:87%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination-label{
+    display: flex;
+    gap:24px;
+}
+
+.pagination-icon{
+    width: 30px;
+    padding: 16px 0;
+}
+
+.pagination-icon > img{
+    width: 100%;
+    height: auto;
+}
+
+.pagination-details{
+    margin: auto 0;
+}
+
+
+/* about page CSS */
+
+.social-proof{
+    margin-top: clamp(48px, 7vw, 256px) ;
+}
+
+.logo-holder{
+    width:15%;
+}
+
+
+
+/* contact page CSS */
+
+.contact-section{
+    height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+}
+
+.form-flex{
+    display: flex;
+    gap:24px;
+}
+
+.form-flex-item{
+    flex: 1 1 calc(50% - 16px);
+}
+
+.contact-form{
+    display: flex;
+    justify-content: center;
+}
+
+.form-sizer{
+    width: clamp(200px, 40vw, 500px);
+}
+
+label, input, textarea{
+    display: block;
+}
+
+input, textarea{
+    margin-bottom: 24px;;
+}
+
+input[type="text"], input[type="email"], textarea {
+    border: 2px solid gainsboro;
+    border-radius: 4px;
+    padding: 16px;
+    font-size: clamp(14px, 2vw, 24px);
+    width: 100%;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
+    border-color: black;
+}
+
+/* input::placeholder {
+    will inhereit font size
+    color:black;
+  } */
+
+button {
+    background-color: transparent;
+    color: #111;
+    border: 1px solid #ccc;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    /* transition: all 0.3s ease; */
+  }
+  
+  button:hover {
+    color: white;
+    background-color: black;
+    border-color: black;
+  }
+  
+  button:active {
+    background-color: #eaeaea;
+    transform: scale(0.98);
+  }
+  
+  button:focus {
+    outline: none;
+    border-color: #000;
+  }
+
+label{
+    font-size: clamp(14px, 2vw, 24px);
+    margin-bottom: 16px;
+}
+
+@media (min-width:1600px){
+    /* typography CSS */
+    
+    
+    h2 {
+        font-size: clamp(30px, 3vw, 40px);
+      }
+
+    /* structural CSS */
+    .max-720{
+        max-width: 1200px;
+    }
+
+    header, footer{
+        padding: 32px 0;
+    }
+
+    p {
+        font-size: clamp(16px, 2vw, 30px);
+        line-height: 1.45;
+      }
+    /* navigation links css */
+    a {
+        font-size: clamp(18px, 2vw, 24px);
+    }
+
+    /* project page CSS */
+    .text-box{
+        width: 780px;
+        margin-top: 16px;
+    }
+
+    .pagination-icon{
+        width: 40px;
+    }
+}
+
+@media (max-width:768px) {
+
+
+    /* structural CSS */
+    section{
+        padding: clamp(30px, 7vw, 256px) 0;
+    }
+    
+    .flex{
+        display: flex;
+        gap:8px;
+        flex-wrap: wrap;
+    }
+
+    .flex-50{
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .flex-30{
+        flex: 1 1 calc(50% - 16px);
+    }
+    
+    /* home page CSS */
+    .usp{
+        width: 100%;
+    }
+
+    .project-gallery{
+        flex-direction: column;
+    }
+
+    /* about page CSS */
+    .intro-padding{
+        padding: 0 0 30px 0;
+    }
+
+    .social-proof{
+        gap:64px;
+        width:70%;
+    }
+
+    .logo-holder{
+        flex: 1 1 calc(50% - 64px);
+    }
+
+    .quote-mobile{
+        width: 70%;
+    }
+
+    /* project page CSS */
+    .text-box{
+        width: 100%;
+        margin-top: 16px;
+    }
+
+    .pagination {
+        width: 85%;
+    }
+    
+
+    .pagination-icon{
+        width: 20px;
+    }
+
+    .pagination-details{
+        display:none;
+    }
+
+
+    /* contact page */
+    .contact-section{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .form-flex{
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .form-sizer{
+        width: 100%;
+    }
+
+    .contact-form{
+        align-items: center;
+        justify-content: center;
+    }
+}
